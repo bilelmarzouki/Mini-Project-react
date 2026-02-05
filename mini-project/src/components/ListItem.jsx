@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import recipies from "../assets/recipe.json"
+import { Link } from 'react-router-dom'
 const ListItem = () => {
     const [recipiesArray, setRecipiesArray]=useState(recipies)
     const ClickMeToRemoveItem =(id)=>{
@@ -20,7 +21,7 @@ const ListItem = () => {
        ))}  {recipiesArray.map((recipe)=>(
         <>
           <ul>
-            {<li>{recipe.name}</li>}
+            <Link to={`/itemDetails/${recipe.id}`}>{<li>{recipe.name}</li>}</Link>
             <button onClick={()=>ClickMeToRemoveItem(recipe.id)}>Click to remove the item</button>
           </ul>
           
