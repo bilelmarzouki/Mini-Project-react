@@ -100,3 +100,24 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+/* Sidebar: Brown background */
+aside {
+  width: 240px;
+  background-color: #5D4037; /* A solid brown color */
+  color: white;              /* Keeps the text readable */
+  border-right: 1px solid #3E2723;
+  padding: 20px;
+}
+
+/* Ensure links in the sidebar stay white/visible */
+aside a {
+  color: #ffffff !important;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+aside a:hover {
+  text-decoration: underline;
+  color: #D7CCC8 !important; /* Lighter brown/tan on hover */
+}
