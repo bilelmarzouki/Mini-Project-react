@@ -1,28 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import ListItem from './components/ListItem'
-import { Route, Routes } from 'react-router-dom'
-import Dashboard from './pages/Dashboard'
-import NotFoundPage from './pages/NotFoundPage'
-import About from './pages/About'
-import ItemDetails from './pages/ItemDetails'
 
+import { Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Sidebar from './components/Sidebar';
+import Footer from './components/Footer';
+import Dashboard from './pages/Dashboard';
+import ItemDetails from './pages/ItemDetails';
+import About from './pages/About';
+import NotFoundPage from './pages/NotFoundPage';
 
 function App() {
- 
   return (
-    <>
+    <div className="app-wrapper">
+      <Navbar /> {/* Stays at the top */}
+      
+      <div className="main-container">
+        <Sidebar /> {/* Stays on the left */}
+        
+        <main className="page-content">
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/itemDetails/:itemId" element={<ItemDetails />} />
+            <Route path="/about" element={<About />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </main>
+      </div>
 
-      <Routes>
-        <Route path='/' element={<Dashboard/>}></Route>
-        <Route path='/itemDetails/:itemId' element={<ItemDetails/>}></Route>
-        <Route path='/about' element={<About/>}></Route>
-        <Route path='*' element={<NotFoundPage/>}></Route>
-      </Routes>
-      {/*<ListItem/>*/} 
-    </>
-  )
+      <Footer /> {/* Stays at the bottom */}
+    </div>
+  );
 }
-
-export default App
+export default App;

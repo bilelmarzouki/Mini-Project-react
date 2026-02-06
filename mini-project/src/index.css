@@ -1,14 +1,123 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+/* --- Global Reset & Base Styles --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  color-scheme: light dark;
-  color: rgba(15, 3, 3, 0.87);
-  background-color: #e9e3e3;
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* --- Layout Structure --- */
+/* The main wrapper for the whole app */
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* This container sits between Nav and Footer, holding Sidebar + Content */
+.main-container {
+  display: flex;
+  flex: 1; /* Takes up all available space between header and footer */
+}
+
+/* --- Component Specific Styles --- */
+
+/* Navbar: Stays at the top */
+nav {
+  height: 60px;
+  background-color: #1a1a1a;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Sidebar: Fixed width on the left */
+aside {
+  width: 240px;
+  background-color: #ffffff;
+  border-right: 1px solid #e0e0e0;
+  padding: 20px;
+}
+
+/* Main Content: The area where your Routes/Dashboard render */
+main {
+  flex: 1;
+  padding: 30px;
+  background-color: #f4f4f4;
+  overflow-y: auto; /* Allows only the content area to scroll if long */
+}
+
+/* Footer: Stays at the bottom */
+footer {
+  height: 50px;
+  background-color: #1a1a1a;
+  color: #888;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+}
+
+/* --- List Styles (for your ListItem.jsx) --- */
+ul {
+  list-style: none;
+  background: white;
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #ff3333;
+}
+
+/* Navigation Links */
+a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Sidebar: Brown background */
+aside {
+  width: 240px;
+  background-color: #5D4037; /* A solid brown color */
+  color: white;              /* Keeps the text readable */
+  border-right: 1px solid #3E2723;
+  padding: 20px;
+}
+
+/* Ensure links in the sidebar stay white/visible */
+aside a {
+  color: #ffffff !important;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+aside a:hover {
+  text-decoration: underline;
+  color: #D7CCC8 !important; /* Lighter brown/tan on hover */
 }
