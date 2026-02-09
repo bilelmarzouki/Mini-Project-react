@@ -86,6 +86,7 @@ button {
   margin-top: 10px;
 }
 
+
 button:hover {
   background-color: #ff3333;
 }
@@ -116,7 +117,11 @@ aside a {
   text-decoration: none;
   font-weight: bold;
 }
-
+.page-content {
+  background-color: #fdf5e6; 
+  padding: 20px;
+  min-height: 100vh;
+}
 aside a:hover {
   text-decoration: underline;
   color: #D7CCC8 !important; /* Lighter brown/tan on hover */
