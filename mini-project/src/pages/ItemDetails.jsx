@@ -1,12 +1,16 @@
 import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import recipies from "../assets/recipe.json"
-function ItemDetails() {
-  const [recipess, setRecipiess]= useState(recipies)
+function ItemDetails({recipiesArray}) {
+  
   const params=useParams()
-  let recipe=recipess.find((item)=>{
+  let recipe=recipiesArray.find((item)=>{
     return item.id===params.itemId
   })
+
+  if (!recipe) {
+    return <div><h1>Recipe not found</h1></div>
+  }
 
   return (
     <div>
