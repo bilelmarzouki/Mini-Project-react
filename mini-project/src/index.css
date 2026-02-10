@@ -124,5 +124,5 @@ aside a {
 }
 aside a:hover {
   text-decoration: underline;
-  color: #D7CCC8 !important; /* Lighter brown/tan on hover */
+  color: #D7CCC8 !important; 
 }

@@ -7,8 +7,11 @@ import Dashboard from './pages/Dashboard';
 import ItemDetails from './pages/ItemDetails';
 import About from './pages/About';
 import NotFoundPage from './pages/NotFoundPage';
+import { useState } from 'react';
+import recipies from "./assets/recipe.json";
 
 function App() {
+  const [recipiesArray, setRecipiesArray] = useState(recipies);
   return (
     <div className="app-wrapper">
       <Navbar /> {/* Stays at the top */}
@@ -18,8 +21,8 @@ function App() {
         
         <main className="page-content">
           <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/itemDetails/:itemId" element={<ItemDetails />} />
+            <Route path="/" element={<Dashboard recipiesArray={recipiesArray} setRecipiesArray={setRecipiesArray} />} />
+            <Route path="/itemDetails/:itemId" element={<ItemDetails recipiesArray={recipiesArray} />} />
             <Route path="/about" element={<About />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
